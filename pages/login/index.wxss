@@ -1,0 +1,4 @@
+/* pages/login/index.wxss */
+.login_wrap {
+  border: 1px solid black;
+}

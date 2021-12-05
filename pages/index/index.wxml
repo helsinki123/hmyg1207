@@ -1,0 +1,35 @@
+<view>
+    <view bindtap="test">清空登录缓存</view>
+    <!-- <TabBar titles="{{tabs}}" bind:tabItemChange="handleItemChange"></TabBar> -->
+    <!-- <text class="iconfont icon-gouwucheman" selectable="false" space="false" decode="false"> -->
+    <!-- </text> -->
+    <SearchInput></SearchInput>
+    <view class="" hover-class="none" hover-stop-propagation="false">
+        <swiper class="" indicator-dots="true" indicator-color="rgba(0,0,0,.3)" autoplay="false" current="0" current-item-id="" interval="5000" duration="1000" circular="false" vertical="false" previous-margin="false" next-margin="0px" display-multiple-items="1" skip-hidden-item-layout="false" bindchange="" bindanimationfinish="">
+            <swiper-item class="" item-id="" wx:for="{{swiperList}}" wx:key="goods_id">
+                <navigator class="" target="" url="../goods_detail/index" hover-class="navigator-hover" open-type="navigate">
+                    <image class="" src="{{item.image_src}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="index_cate" hover-class="none" hover-stop-propagation="false">
+        <navigator wx:for="{{cateList}}" :key="name" class="" target="" 
+        url="../../pages/category/index" hover-class="navigator-hover" open-type="switchTab">
+            <image class="" src="{{item.image_src}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        </navigator>
+    </view>
+    <view class="index_floor">
+        <view class="floor_group" wx:for="{{floorList}}" wx:for-item="item" wx:for-index="index1" :key="floor_title" hover-class="none" hover-stop-propagation="false">
+            <view class="floor_title" hover-class="none" hover-stop-propagation="false">
+                <image class="" src="{{item.floor_title.image_src}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+            </view>
+            <view class="floor_list">
+                <navigator wx:for="{{item.product_list}}" wx:for-item="item1" wx:for-index="index2" 
+                :key="item1.name" url="{{item1.navigator_url}}">
+                    <image class="" src="{{item1.image_src}}" mode="{{index2===0?'widthFix':'scaleToFill'}}"></image>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

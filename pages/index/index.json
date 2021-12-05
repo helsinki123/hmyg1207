@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "SearchInput":"../../components/Searchinput/Searchinput"
+
+    }
+    
+}

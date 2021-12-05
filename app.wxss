@@ -1,0 +1,23 @@
+page,
+viwe,
+text,
+swiper,
+swiper-item,
+image,
+navigator {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+page {
+    --themeColor: #eb4450;
+    font-size: 28rpx;
+    height: 100%;
+}
+
+image {
+    width: 100%;
+}
+
+@import "./styles/iconfont.wxss"

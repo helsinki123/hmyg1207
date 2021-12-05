@@ -1,0 +1,33 @@
+<view class="cates" hover-class="none" hover-stop-propagation="false">
+    <Searchinput></Searchinput>
+    <view class="cates_content">
+        <scroll-view class="left_menu" scroll-y="true">
+            <view bindtap="handleItemTap" data-index="{{index}}" class="menu_item {{index===currentIndex?'active':''}}" wx:for="{{leftMenuList}}" :key="this" hover-class="none" hover-stop-propagation="false">
+                {{item}}
+            </view>
+        </scroll-view>
+        <scroll-view class="right_content" scroll-y="true">
+            <view class="menu_item" wx:for="{{rightContent}}" wx:for-item="item1" wx:for-index="index1" :key="this" hover-class="none" hover-stop-propagation="false">
+                <view class="tit" hover-class="none" hover-stop-propagation="false">
+                    {{item1.cat_name}}
+                </view>
+                <view class="children" hover-class="none" hover-stop-propagation="false">
+                    <navigator 
+                    wx:for="{{item1.children}}" 
+                    :key="this" 
+                    wx:for-item="item2" 
+                    wx:for-index="index2"
+                    url="/pages/goods_list/index?cid={{item1.cat_id}}">
+                        <image class="" src="{{item2.cat_icon}}" mode="widthFix">
+
+                        </image>
+                        <view class="goods_name" hover-class="none" hover-stop-propagation="false">
+                            {{item2.cat_name}}
+                        </view>
+                    </navigator>
+                </view>
+
+            </view>
+        </scroll-view>
+    </view>
+</view>

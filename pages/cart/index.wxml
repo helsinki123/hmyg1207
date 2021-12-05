@@ -1,0 +1,85 @@
+<!-- pages/cart/index.wxml -->
+<!-- <view class="address_btn" wx:if="{{!address.userName}}">
+    <button type="primary" plain bindtap="handleChooseAddress">获取收货地址</button>
+</view>
+<view wx:else class="info_box">
+    <view class="user_info">
+        <view>{{address.userName}}</view>
+        <view>{{address.detailInfo}}</view>
+    </view>
+    <view class="user_phone">{{address.telNumber}}</view>
+</view> -->
+<view class="cart_content">
+    <view class="cart_title">购物车</view>
+    
+    <view class="cart_main">
+        <view class="cart_item" wx:for="{{cart}}" wx:key="goods_name">
+            <view class="cart_checkbox_wrap">
+                    <view class="cart_checkbox_wrap">
+                        <text class="{{item.isChecked?'active':''}}" bind:tap="handleCheckChange" data-id="{{item.goods_id}}">
+                            选中
+                        </text>
+                    </view>
+            </view>
+            <navigator class="cart_img_wrap">
+                <image src="{{item.pics[0].pics_sma_url}}" mode="widthFix" />
+            </navigator>
+            <view class="cart_info_wrap">
+                <view class="goods_name">{{item.goods_name}}</view>
+                <view class="cart_price_wrap">
+                    <view class="goods_price">{{item.goods_price}}</view>
+                    <view class="cart_num_tool">
+                        <view class="num_edit">-</view>
+                        <view class="num">1</view>
+                        <view class="num_edit">+</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 测试 -->
+    <!-- <view class="cart_main">
+        <view class="cart_item">
+            <view wx:for="{{cart}}" wx:key="goods_name">
+                <view class="cart_checkbox_wrap">
+                    <text class="{{item.isChecked?'active':''}}" bind:tap="handleCheckChange" data-id="{{item.goods_id}}">
+                        选中
+                    </text>
+                </view>
+                <image src="{{item.pics[0].pics_sma_url}}" mode="widthFix" />
+                <text class="" selectable="false" space="false" decode="false">
+                    {{item.goods_name}}
+                </text>
+            </view>
+        </view>
+    </view> -->
+</view>
+<view class="bottom">
+    <view class="left">
+        <checkbox class="" value="" disabled="false" checked="false" color=""></checkbox>
+        全选
+    </view>
+    <view class="right">
+        合计
+        <view>${{totalPrice}}</view>
+        <!-- <view class="money">{{ m1.newSum(num1,num2) }}</view> -->
+        <view class="jiesuan" bind:tap="handlePay">结算</view>
+    </view>
+</view>
+<!-- <view style="display:flex;margin:20px">
+    <input style="border:1px solid #000000" type="number" value="{{num1}}" bindinput="mobileInput1" />
+    <text>+</text>
+    <input style="border:1px solid #000000" type="number" value="{{num2}}" bindinput="mobileInput2" />
+</view>
+<view style="margin:20px">总数为：{{ m1.newSum(num1,num2) }}</view> -->
+<!-- 类似vue的计算属性 -->
+<wxs module="m1">
+    var newSum = function(num1,num2) {
+ 
+        num1 = Number(num1);
+        num2 = Number(num2);
+ 
+        return num1 + num2;
+    }
+    module.exports.newSum = newSum;
+    </wxs>

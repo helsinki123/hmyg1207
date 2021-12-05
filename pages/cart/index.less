@@ -1,0 +1,100 @@
+/* pages/cart/index.wxss */
+
+.address_btn {
+    font-size: 10px;
+}
+
+.info_box {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+
+    .user_info {
+        // margin-right: 10px;
+    }
+}
+
+.cart_content {
+    .cart_title {
+        padding: 20rpx;
+        font-size: 36rpx;
+        color: var(--themeColor);
+        border-top: 1rpx solid currentColor;
+        border-bottom: 1rpx solid currentColor;
+    }
+
+    .cart_main {
+    border: 1px solid black;
+
+        .cart_item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .cart_checkbox_wrap {
+                flex: 1;
+                .active {
+                    color: red;
+                  }
+            }
+
+            .cart_img_wrap {
+                display: flex;
+            justify-content: center;
+            align-items: center;
+                flex: 2;
+                image {
+                    width: 80%;
+                    height: 75px;
+                }
+            }
+
+            .cart_info_wrap {
+                flex: 4;
+                .goods_name {
+                    display: -webkit-box;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
+                }
+
+                .cart_price_wrap {
+                    display: flex;
+                    justify-content: space-between;
+                    .goods_price {}
+
+                    .cart_num_tool {
+                        display: flex;
+                        .num_edit {}
+
+                        .num {}
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    .left {
+      checkbox {
+  
+      }
+    }
+  
+    .right {
+        display: flex;
+      .money {
+  color: orange;
+      }
+  
+      .jiesuan {
+        background-color: orange;
+      }
+    }
+  }

@@ -1,0 +1,35 @@
+/* pages/category/index.wxss */
+.cates {
+  height: 100%;
+}
+.cates_content {
+  height: 100%;
+  display: flex;
+}
+.cates_content .left_menu {
+  flex: 2;
+}
+.cates_content .left_menu .menu_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  font-size: 30rpx;
+}
+.cates_content .right_content {
+  flex: 5;
+}
+.cates_content .right_content .menu_item .children {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cates_content .right_content .menu_item .children navigator {
+  width: 33.33%;
+}
+.cates_content .right_content .menu_item .children image {
+  flex: 1;
+  width: 100%;
+}
+.cates_content .active {
+  color: red;
+}
